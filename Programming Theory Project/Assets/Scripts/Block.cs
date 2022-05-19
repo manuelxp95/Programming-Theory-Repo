@@ -6,7 +6,7 @@ public class Block : MonoBehaviour
 {
 
     //private Material mat= new Material (Shader.Find("Standard"));
-    private int index;
+    //private int index;
     public Material[] typesBlocks;
 
 
@@ -23,10 +23,10 @@ public class Block : MonoBehaviour
     }
 
     //CHOOSE A CARD
-    public Material takeCard(){
-        index= Random.Range(0,typesBlocks.Length-1);
-        return typesBlocks[index];
-    }
+    // public Material takeCard(){
+    //     index= Random.Range(0,typesBlocks.Length-1);
+    //     return typesBlocks[index];
+    // }
 
     // move the block under player
     public void moveToPlayer(){ //ABSTRACTION

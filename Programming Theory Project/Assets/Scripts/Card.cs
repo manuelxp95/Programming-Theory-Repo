@@ -9,12 +9,15 @@ public class Card : Block //INHERITANCE
     //para block
     private GameManager gameManager;
     private MovePosition playerCamera;
+    public int indexCard;
+    public Material[] typesCards;
     
 
     // Start is called before the first frame update
     void Start(){
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         playerCamera = GameObject.Find("Main Camera").GetComponent<MovePosition>();
+        ChooseCard();//ABSTRACTION
         HideCard();//ABSTRACTION
     }
 
@@ -28,6 +31,11 @@ public class Card : Block //INHERITANCE
         color = this.GetComponent<MeshRenderer>().material.color;
         color.a=0;
         GetComponent<MeshRenderer>().material.color= color;
+    }
+
+    private void ChooseCard(){
+        indexCard= Random.Range(0,typesCards.Length-1);
+        GetComponent<MeshRenderer>().material=typesCards[indexCard];
     }
 
     private void OnMouseDown(){

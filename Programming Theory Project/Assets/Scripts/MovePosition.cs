@@ -7,10 +7,11 @@ public class MovePosition : MonoBehaviour
     private float speed = 10f;
     private bool canMove= false;
     private Vector3 nextPosition;
+    private GameManager gameManager;
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -20,8 +21,10 @@ public class MovePosition : MonoBehaviour
     }
 
     public void NewPosition(Vector3 newPosition){
-       // transform.position = this.transform.position+newPosition; 
-        nextPosition= newPosition + this.transform.position;
+        //nextPosition=Vector3.ZERO;
+        nextPosition= newPosition + new Vector3(0,this.transform.position.y,0);
+        Debug.Log("posicion camara: "+this.transform.position);
+        Debug.Log("soy nuevo posion: "+newPosition);
         canMove=true;
     }
 
@@ -30,6 +33,7 @@ public class MovePosition : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position,nextPosition,Time.deltaTime*speed);
               if (Vector3.Distance(transform.position,nextPosition)< 0.001f){
                 canMove=false;
+                gameManager.NextSteps(transform.position.x,transform.position.z);
             }
         }
     }
