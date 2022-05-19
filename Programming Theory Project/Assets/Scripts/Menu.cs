@@ -24,9 +24,9 @@ public class Menu : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-     public void Exit()
+
+    public void Exit()
     {
-        //MenuUI.Instance.SaveScore();
         #if UNITY_EDITOR
             EditorApplication.ExitPlaymode();
         #else
