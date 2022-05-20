@@ -1,49 +1,45 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Card : Block //INHERITANCE
+public class Card : MonoBehaviour
+    
+ //INHERITANCE
 {
  
-    private Color color;
+    public Color color;
     //para block
-    private GameManager gameManager;
-    private MovePosition playerCamera;
-    public int indexCard;
+    public GameManager gameManager;
+    public MovePosition playerCamera;
+    private int indexCard;
     public Material[] typesCards;
+    public Slider playerHealth;
     
 
-    // Start is called before the first frame update
-    void Start(){
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        playerCamera = GameObject.Find("Main Camera").GetComponent<MovePosition>();
-        ChooseCard();//ABSTRACTION
-        HideCard();//ABSTRACTION
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    private void HideCard(){
+    public void HideCard(){
         color = this.GetComponent<MeshRenderer>().material.color;
         color.a=0;
         GetComponent<MeshRenderer>().material.color= color;
     }
 
     private void ChooseCard(){
-        indexCard= Random.Range(0,typesCards.Length-1);
+        indexCard= Random.Range(0,typesCards.Length); // 0-->red 1-->blue 2-->green
         GetComponent<MeshRenderer>().material=typesCards[indexCard];
     }
 
-    private void OnMouseDown(){
+    public void OnMouseDown(){
+        Debug.Log(gameManager);
         if (gameManager.canSelect){
             color.a=1;
             GetComponent<MeshRenderer>().material.color= color;
             gameManager.canSelect=false;
+            gameManager.overTop=this.GetComponent<Card>();
             playerCamera.NewPosition(this.transform.position);
         }
+    }
+
+    public virtual void applyAttribute(){ //POLYMORPHISM
+        playerHealth.value=playerHealth.value-1;
     }
 }

@@ -142,7 +142,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &157107377
 Transform:
   m_ObjectHideFlags: 0
@@ -232,9 +232,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a3efd195cca5484db69157af62e1f68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typesBlocks: []
-  indexCard: 0
+  color: {r: 0, g: 0, b: 0, a: 0}
+  gameManager: {fileID: 0}
+  playerCamera: {fileID: 0}
   typesCards: []
+  playerHealth: {fileID: 0}
 --- !u!1 &203930268
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,7 +356,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &213482657
 Transform:
   m_ObjectHideFlags: 0
@@ -444,9 +446,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a3efd195cca5484db69157af62e1f68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typesBlocks: []
-  indexCard: 0
+  color: {r: 0, g: 0, b: 0, a: 0}
+  gameManager: {fileID: 0}
+  playerCamera: {fileID: 0}
   typesCards: []
+  playerHealth: {fileID: 0}
 --- !u!1 &294949732
 GameObject:
   m_ObjectHideFlags: 0
@@ -1330,10 +1334,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24b952cb5ab37e04ab27eebb73ab13ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typesBlocks:
-  - {fileID: 2100000, guid: 29f73ae28b2022646902efa607959d6c, type: 2}
-  - {fileID: 2100000, guid: 89d6ce828196935429aafedf3cb403cc, type: 2}
-  - {fileID: 2100000, guid: dcdcf5d15f035624f93d402b25448bf4, type: 2}
 --- !u!4 &2085246327
 Transform:
   m_ObjectHideFlags: 0
@@ -1360,7 +1360,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f046663aaa3d71541a22ef3a5829342c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CardPrefab: {fileID: 8432336830032881140, guid: d89d9b0f6e04328488f96fcb67f666bf, type: 3}
+  CardPrefabs:
+  - {fileID: 8432336830032881140, guid: b84b2cc26dafd8a4985819286311229c, type: 3}
+  - {fileID: 8432336830032881140, guid: cbbbd8eb580815e4eb571b7a1f745bc6, type: 3}
+  - {fileID: 8432336830032881140, guid: e4c60626680ffa34e88e1578ebb67b9b, type: 3}
   canSelect: 1
 --- !u!1001 &383888352266460563
 PrefabInstance:
@@ -1369,6 +1372,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1051369849}
     m_Modifications:
+    - target: {fileID: 383888352493570373, guid: d89d9b0f6e04328488f96fcb67f666bf, type: 3}
+      propertyPath: typesCards.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 878866c23ddfe784abd142685337ea22, type: 2}
     - target: {fileID: 2466939150810221663, guid: d89d9b0f6e04328488f96fcb67f666bf, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1416,6 +1423,10 @@ PrefabInstance:
     - target: {fileID: 8432336830032881140, guid: d89d9b0f6e04328488f96fcb67f666bf, type: 3}
       propertyPath: m_Name
       value: Card
+      objectReference: {fileID: 0}
+    - target: {fileID: 8432336830032881140, guid: d89d9b0f6e04328488f96fcb67f666bf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d89d9b0f6e04328488f96fcb67f666bf, type: 3}

@@ -109,9 +109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a3efd195cca5484db69157af62e1f68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typesBlocks: []
   indexCard: 0
   typesCards:
   - {fileID: 2100000, guid: d89fd0d66e54e654b8587b24b9d360d4, type: 2}
   - {fileID: 2100000, guid: d1a8d6929296f8447a303096a0b93c8a, type: 2}
-  - {fileID: 2100000, guid: 29f73ae28b2022646902efa607959d6c, type: 2}
+  - {fileID: 2100000, guid: 878866c23ddfe784abd142685337ea22, type: 2}
