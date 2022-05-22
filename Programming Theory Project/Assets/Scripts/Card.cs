@@ -29,13 +29,12 @@ public class Card : MonoBehaviour
     }
 
     public void OnMouseDown(){
-        Debug.Log(gameManager);
         if (gameManager.canSelect){
             color.a=1;
             GetComponent<MeshRenderer>().material.color= color;
-            gameManager.canSelect=false;
             gameManager.overTop=this.GetComponent<Card>();
             playerCamera.NewPosition(this.transform.position);
+            gameManager.canSelect=false;
         }
     }
 
