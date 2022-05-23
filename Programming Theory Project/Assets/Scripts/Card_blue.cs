@@ -21,6 +21,7 @@ public class Card_blue : Card
     public override void applyAttribute(){  //POLYMORPHISM
         playerCamera.NewPosition(spawnPosition);
         deletCards();
+        gameManager.steps=-1;
     }
 
     public void deletCards(){

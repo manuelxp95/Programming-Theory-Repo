@@ -1365,6 +1365,8 @@ MonoBehaviour:
   - {fileID: 8432336830032881140, guid: cbbbd8eb580815e4eb571b7a1f745bc6, type: 3}
   - {fileID: 8432336830032881140, guid: e4c60626680ffa34e88e1578ebb67b9b, type: 3}
   canSelect: 1
+  overTop: {fileID: 0}
+  steps: 0
 --- !u!1001 &383888352266460563
 PrefabInstance:
   m_ObjectHideFlags: 0

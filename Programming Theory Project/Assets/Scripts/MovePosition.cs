@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MovePosition : MonoBehaviour
 {
-    private float speed = 10f;
+    private float speed = 25f; //---------> Encapsular
     private bool canMove= false;
     private Vector3 nextPosition;
     private GameManager gameManager;
@@ -33,6 +33,7 @@ public class MovePosition : MonoBehaviour
                 canMove=false;
                 gameManager.NextSteps(transform.position.x,transform.position.z);
                 gameManager.cardEffect();
+                gameManager.steps++;
             }
         }
     }

@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public bool canSelect= true;
     private Vector3 playerPos= new Vector3(0f,6.77f,-6.51f);
     public Card overTop;
+    public int steps = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -33,14 +34,15 @@ public class GameManager : MonoBehaviour
 
     public void NextSteps(float xPlayer,float zPlayer){
         Vector3 playerPosition= new Vector3(xPlayer,0,zPlayer);
-        int i=0;
+        
         foreach (Vector3 item in posCards)
         {
+            int i=Random.Range(0,CardPrefabs.Length);
             Instantiate(CardPrefabs[i],
                 item+playerPosition,
                 CardPrefabs[i].transform.rotation
             );
-            i++;
+            
         }
         canSelect=true;
     }
