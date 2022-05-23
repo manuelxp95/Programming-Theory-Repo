@@ -34,6 +34,7 @@ public class MovePosition : MonoBehaviour
                 gameManager.NextSteps(transform.position.x,transform.position.z);
                 gameManager.cardEffect();
                 gameManager.steps++;
+
             }
         }
     }

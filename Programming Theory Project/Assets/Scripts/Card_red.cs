@@ -6,10 +6,12 @@ using UnityEngine.UI;
 public class Card_red : Card
 {
     public ParticleSystem explosion;
+    private AudioSource soundExplotion;
 
     // Start is called before the first frame update
     void Start()
     {
+        soundExplotion= GetComponent<AudioSource>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         playerCamera = GameObject.Find("Main Camera").GetComponent<MovePosition>();
         playerHealth = GameObject.Find("/Canvas/HealthBar").GetComponent<Slider>();
@@ -19,6 +21,7 @@ public class Card_red : Card
     }
     
     public override void applyAttribute(){  //POLYMORPHISM
+        soundExplotion.Play();
         explosion.Play();
         playerHealth.value=playerHealth.value-1;
     }

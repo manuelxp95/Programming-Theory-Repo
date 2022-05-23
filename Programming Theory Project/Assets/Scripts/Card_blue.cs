@@ -20,6 +20,7 @@ public class Card_blue : Card
 
     public override void applyAttribute(){  //POLYMORPHISM
         playerCamera.NewPosition(spawnPosition);
+        playerCamera.GetComponent<AudioSource>().Play();
         deletCards();
         gameManager.steps=-1;
     }
